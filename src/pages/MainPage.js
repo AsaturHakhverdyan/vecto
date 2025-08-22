@@ -52,7 +52,11 @@ const MainPage = () => {
 						<p>{movie?.Runtime.split(" ").join("")}</p>
 					</div>
 					<div className="max-w-[700px]">
-						<p className="text-[18px] text-white mt-2">{movie?.Plot}</p>
+						<p className="text-[18px] text-white mt-2">
+							{movie?.Plot.length > 300
+								? movie?.Plot.slice(0, 300) + "..."
+								: movie?.Plot}
+						</p>
 					</div>
 					<ButtonsSide />
 				</div>
